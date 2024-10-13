@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo"><img src="logo.png" alt="" style="height: 40px;width: 40px;"></div>
+            <nav>
+                <ul >
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <!-- Top Navigation -->
+            <div class="top-bar">
+                <input type="text" placeholder="Search City" class="search-bar" />
+                <button class="search-button">Search</button>
+                <button class="switch-button">Switch to Fahrenheit</button>
+                <div class="user-profile"><img style="width: 40px;height: 40px;border-radius: 50%;object-fit: contain;" src="me.jpg" alt=""></div>
+            </div>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="dashboard-section">
+                <div class="weather-data">
+                    <h2>Weather Data Based on City</h2>
+                </div>
+                <div class="charts">
+                    <canvas id="vertical-bar-chart"></canvas> <!-- Smaller Bar chart -->
+                    <canvas id="doughnut-chart"></canvas> <!-- Smaller Doughnut chart -->
+                    <canvas id="line-chart"></canvas> <!-- Smaller Line chart -->
+                </div>
+                
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

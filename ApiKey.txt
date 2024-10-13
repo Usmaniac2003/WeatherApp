@@ -1,0 +1,2 @@
+OpenWeather:"82bdfccab6c1f07d6ebfba9b715b59e7";
+Gemini:"AIzaSyCuZBNCAGVW-aXfNQPSKUl_UHhIkaNNN4k";

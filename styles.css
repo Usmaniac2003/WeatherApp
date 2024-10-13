@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+@media (max-width: 500px) {
+.container{
+    flex-direction: column;
+}
+
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50; /* Dark blue background */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+    @media (max-width: 500px) {
+        .sidebar{
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+            min-height: 20vh;
+            min-width: 100vw;
+        }
+         .logo{
+            font-size: 20px;
+        }
+        .nav{
+            display: flex;
+            align-items: center;
+        }
+        .sidebar nav ul li a::before {
+            content: '';
+        }
+        }
+
+.sidebar .logo {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ecf0f1; /* Light color for logo */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #34495e; /* Adds a border below the logo */
+    padding-bottom: 20px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px 20px;
+    display: block;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #3498db; /* Blue background on hover */
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Shadow on hover for more depth */
+    transform: translateX(5px); /* Small shift to right */
+}
+
+.sidebar nav ul li a.active {
+    background-color: #1abc9c; /* Active link color */
+    color: white;
+}
+
+.sidebar nav ul li a::before {
+    content: '•'; /* Add bullet icon before each item */
+    margin-right: 10px;
+    color: #bdc3c7; /* Gray bullet */
+    font-size: 18px;
+}
+
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Bar Styling */
+/* Top Bar Styling */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure proper alignment of the elements */
+    background-color: #fff; /* White background for a clean look */
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    margin-bottom: 20px;
+    width: 100%; /* Ensure full width across the viewport */
+    flex-wrap: wrap; /* Enable wrapping on smaller screens */
+}
+
+/* Search Bar Styling */
+.search-bar {
+    width: 50%; /* Adjust width for larger screens */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05); /* Slight shadow for depth */
+    flex-grow: 1;
+    margin-right: 10px; /* Add spacing between the input and buttons */
+}
+
+.search-bar:focus {
+    border-color: #3498db; /* Blue border on focus */
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    background-color: #3498db; /* Primary blue color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    flex-shrink: 0; /* Prevent the button from shrinking too much */
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* User Profile Styling */
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensure the image fits within the circle */
+    border: 2px solid #ddd;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    margin-left: 20px; /* Space between user profile and the button */
+    flex-shrink: 0;
+}
+.user-profile{
+    align-self: center;
+}
+
+
+/* Responsive Layout for the Top Bar */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .search-bar {
+        width: 100%; /* Full width for the search bar on small screens */
+        margin-bottom: 10px;
+    }
+
+    button, .user-profile img {
+        width: 100%; /* Full width for buttons and image */
+        margin-left: 0; /* Remove left margin for buttons */
+        margin-bottom: 10px; /* Add margin below elements for spacing */
+    }
+
+    .user-profile img {
+        width: 50px; /* Slightly larger profile image for smaller screens */
+        height: 50px;
+    }
+}
+
+
+.dashboard-section, .tables-section {
+    flex-grow: 1;
+    padding: 20px;
+    
+}
+
+/* Dashboard Section Styling */
+.dashboard-section {
+    background-color: #fff; /* White background for a clean look */
+    padding: 20px;
+    border-radius: 12px; /* Rounded corners for a modern look */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin: 40px;
+
+}
+
+.dashboard-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50; /* Dark color for the heading */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Charts Container */
+.charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Spacing between the charts */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Chart Canvas Styling */
+canvas {
+    background-color: #f9f9f9; /* Light background for the charts */
+    border-radius: 12px; /* Rounded corners for charts */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for charts */
+    padding: 10px;
+}
+
+/* For responsive handling of the charts */
+@media (max-width: 768px) {
+    .charts {
+        grid-template-columns: 1fr; /* Stack charts on top of each other for small screens */
+    }
+}
+
+
+.weather-data {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.charts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart {
+    background-color: white;
+    width: 30%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.table-container, .chatbot-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.table-container {
+    flex-grow: 2;
+    background-color: white;
+    padding: 20px;
+}
+
+.chatbot-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbar, .answer-area {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.chatbar {
+    height: 50px;
+}
+
+.answer-area {
+    height: 200px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .charts {
+        flex-direction: column;
+    }
+
+    .chart {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .table-container, .chatbot-container {
+        flex-direction: column;
+    }
+}
+
+/* Charts  */
+/* Style for the charts container */
+.charts {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Style for individual charts */
+canvas {
+    max-width: 300px;
+    max-height: 250px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .charts {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    canvas {
+        max-width: 100%;
+        max-height: 300px;
+    }
+}
+
+
+/* Tables.html */

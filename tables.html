@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Tables</title>
+    <link rel="stylesheet" href="tables.css">
+</head>
+<body>
+    <div class="container">
+           <aside class="sidebar">
+            <div class="logo"><img src="logo.png" alt="" style="height: 40px;width: 40px;"></div>
+            <nav>
+                <ul >
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <!-- Top Navigation -->
+            <div class="top-bar" style="display: flex;align-items: center;">
+                <input type="text" placeholder="Search City" class="search-bar" />
+                <button class="search-button">Search</button>
+                <div class="user-profile"><img style="width: 40px;height: 40px;border-radius: 50%;object-fit: contain;" src="me.jpg" alt=""></div>
+            </div>
+            <div class="filter-controls" style="margin: 0 4vw;">
+                <button onclick="sortTemperaturesAscending(forecastData)">Sort Temperatures (Ascending)</button>
+                <button onclick="sortTemperaturesDescending(forecastData)">Sort Temperatures (Descending)</button>
+                <button onclick="filterRainDays(forecastData)">Show Rainy Days</button>
+                <button onclick="showHighestTemperatureDay(forecastData)">Show Day with Highest Temp</button>
+            </div>
+        
+            <!-- Tables Section -->
+            <section id="tables" class="tables-section" >
+                <div class="table-container">
+                    <h2 style="margin: 2vh 0;">5-Day Weather Forecast</h2>
+                    <div id="forecast-grid" class="forecast-grid"></div>
+                <div id="pagination" class="pagination-controls" ></div>
+                </div>
+                <div class="chatbot-container">
+                    <h2 style="margin: 2vh 0;">ChatBot</h2>
+
+                    <div class="chatbar">
+                        <input type="text" id="chat-input" placeholder="Ask me a question..." />
+                        <button id="send-button">Send</button>
+                    </div>
+                    <div class="answer-area" id="chatbot-response">
+                        <!-- Chatbot responses will appear here -->
+                    </div>
+                </div>
+            </section>
+
+           </main>
+    </div>
+
+    <script src="tables.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>
